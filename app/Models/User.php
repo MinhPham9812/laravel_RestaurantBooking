@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_staff',
     ];
 
     /**
@@ -42,4 +43,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    
+    /**
+     * Kiểm tra xem người dùng có phải là nhân viên hay không
+     *
+     * @return bool
+     */
+    public function isStaff()
+    {
+        return (bool) $this->is_staff;
+    }
 }

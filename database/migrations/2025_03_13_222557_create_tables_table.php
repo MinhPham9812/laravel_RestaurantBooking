@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('tables', function (Blueprint $table) {
             $table->id();
+            $table->string('name');         // Tên bàn (VD: Bàn 1, Bàn VIP 2)
+            $table->integer('capacity');    // Số người tối đa
+            $table->boolean('is_vip')->default(false); // Bàn VIP hay không
+            $table->boolean('is_available')->default(true); // Trạng thái sẵn sàng
             $table->timestamps();
         });
     }
